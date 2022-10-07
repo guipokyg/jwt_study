@@ -11,3 +11,19 @@ spring:
       password: "!q1w2e3r4"
       maximum-pool-size: 10
       connection-test-query: SELECT 1
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+jpa:
+  hibernate:
+    ddl-auto: update #create update none
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  show-sql: true
