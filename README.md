@@ -1,2 +1,2 @@
-# lecture_ver0
+# JWT 공부용
 공부용 Git Hub
