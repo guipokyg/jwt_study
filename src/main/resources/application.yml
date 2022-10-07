@@ -4,13 +4,19 @@ spring:
       prefix: /WEB-INF/jsp/
       suffix: /jsp
   datasource:
-    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mariadb://127.0.0.1:3306/study?characterEncoding=UTF-8&serverTimezone=UTC
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://127.0.0.1:3306/study?characterEncoding=UTF-8&serverTimezone=UTC
     hikari:
-      username: "goddaehee"
+      username: goddaehee
       password: "!q1w2e3r4"
       maximum-pool-size: 10
       connection-test-query: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: create #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
 
 server:
   port: 8080
@@ -20,10 +26,3 @@ server:
       charset: UTF-8
       enabled: true
       force: true
-
-jpa:
-  hibernate:
-    ddl-auto: update #create update none
-    naming:
-      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-  show-sql: true
