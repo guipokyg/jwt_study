@@ -1,0 +1,13 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: /jsp
+  datasource:
+    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mariadb://127.0.0.1:3306/study?characterEncoding=UTF-8&serverTimezone=UTC
+    hikari:
+      username: "goddaehee"
+      password: "!q1w2e3r4"
+      maximum-pool-size: 10
+      connection-test-query: SELECT 1
