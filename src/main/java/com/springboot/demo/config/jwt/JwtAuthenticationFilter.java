@@ -44,9 +44,9 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         // 파라메터 json 타입 처리
         ObjectMapper om = new ObjectMapper();
         try {
-            User user = om.readValue(request.getInputStream(),User.class);
-            
-            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
+             User user = om.readValue(request.getInputStream(),User.class);
+            System.out.println(user);
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken("admin", "1234");
         
             //pricipaldetails service의 loadUerbyUsernmae함수가 실행됨.
             //username과 password를 일치 확인

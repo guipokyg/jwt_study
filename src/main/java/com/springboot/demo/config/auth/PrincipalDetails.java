@@ -29,7 +29,7 @@ public class PrincipalDetails implements UserDetails {
        user.getRoleList().forEach(r ->{
         System.out.println(r);
         //authorities.add(new SimpleGrantedAuthority(authority));
-        authorities.add(()->r);
+        authorities.add(()-> r);
         //authorities.add(r);
        });
 
