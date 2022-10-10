@@ -9,8 +9,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.springboot.demo.model.User;
 
+import lombok.Data;
+
 
 //security Session => Authentication => UserDetails
+@Data
 public class PrincipalDetails implements UserDetails {
 
     private User user;
@@ -66,6 +69,6 @@ public class PrincipalDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         // TODO Auto-generated method stub
-        return false;
+        return true;
     }
 }

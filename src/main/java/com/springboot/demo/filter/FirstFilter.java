@@ -29,7 +29,7 @@ public class FirstFilter implements Filter {
             //  .append("</body>").append("</html>");
     
             System.out.println(req.getMethod());
-           
+            System.out.println(req.getRequestURI());
             //post로 보내야 authorization을 받을수 있다.(헤더를 받을수 있다.)
             if("POST".equals(req.getMethod())){
                 String headerAuth  = req.getHeader("Authorization");
@@ -41,6 +41,12 @@ public class FirstFilter implements Filter {
                     PrintWriter out = res.getWriter();
                     out.println("인증안됨");
                 }
+            }else{
+            //    PrintWriter out = res.getWriter();
+            //    res.setContentType("text/html;charset=UTF-8");
+            //    out.println("<script>alert('get방식은 다메요');");
+            //    out.println("location.href='/';</script>");
+            //    out.flush();
             }
 
             // chain.doFilter(req,res);
